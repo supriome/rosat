@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+#root {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Noto Serif SC', serif;
 }
-
-.App-logo {
-  height: 40vmin;
+.site-noise {
+  height: 300%;
+  width: 300%;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  background-repeat: repeat;
+  background-image: url(assets/images/noise.png);
+  opacity: 0.6;
+  will-change: transform;
+  z-index: 0;
   pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.site-noise.is-playing {
+  animation: grain 2s steps(10) infinite;
 }
-
-.App-header {
-  background-color: #282c34;
+.container {
+  display: flex;
   min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.menu {
+  width: 280px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  overflow: hidden;
+  background-color: #ffffff80;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.menu .logo {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+}
+.menu .logo img {
+  display: block;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+.menu .menuItem p {
+  font-size: 18px;
+  font-family: "Noto Serif SC";
+  font-weight: 400;
+  color: #00000073;
+  line-height: 4.889;
+}
+.menu .menuFooter .social {
+  display: flex;
+}
+.menu .menuFooter .copyright p {
+  font-size: 14px;
+  line-height: 1;
+  font-family: "Noto Serif SC";
+  font-weight: 400;
+  color: #00000073;
+}
+.cont {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.menuItem {
+  text-align: center;
+}
+.txt {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  height: 100%;
 }
-
-.App-link {
-  color: #61dafb;
+.txt .p1 {
+  font-family: "Noto Serif SC";
+  font-weight: 300;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.2);
+  line-height: 2.158;
+  text-align: center;
+  letter-spacing: 26px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.txt .p2 {
+  font-size: 28px;
+  line-height: 1.556;
+  text-align: center;
+  font-family: "Noto Serif SC";
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.741);
+}
+@-webkit-keyframes grain {
+  0%,
   to {
-    transform: rotate(360deg);
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  10% {
+    -webkit-transform: translate(-510px, -510px);
+    transform: translate(-510px, -510px);
+  }
+  20% {
+    -webkit-transform: translate(-515px, 55px);
+    transform: translate(-515px, 55px);
+  }
+  30% {
+    -webkit-transform: translate(57px, -525px);
+    transform: translate(57px, -525px);
+  }
+  40% {
+    -webkit-transform: translate(521px, 525px);
+    transform: translate(521px, 525px);
+  }
+  50% {
+    -webkit-transform: translate(-525px, 510px);
+    transform: translate(-525px, 510px);
+  }
+  60% {
+    -webkit-transform: translate(515px, 55px);
+    transform: translate(515px, 55px);
+  }
+  70% {
+    -webkit-transform: translate(50px, 515px);
+    transform: translate(50px, 515px);
+  }
+  80% {
+    -webkit-transform: translate(525px, 535px);
+    transform: translate(525px, 535px);
+  }
+  90% {
+    -webkit-transform: translate(-510px, 510px);
+    transform: translate(-510px, 510px);
+  }
+}
+@keyframes grain {
+  0%,
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  10% {
+    -webkit-transform: translate(-510px, -510px);
+    transform: translate(-510px, -510px);
+  }
+  20% {
+    -webkit-transform: translate(-515px, 55px);
+    transform: translate(-515px, 55px);
+  }
+  30% {
+    -webkit-transform: translate(57px, -525px);
+    transform: translate(57px, -525px);
+  }
+  40% {
+    -webkit-transform: translate(521px, 525px);
+    transform: translate(521px, 525px);
+  }
+  50% {
+    -webkit-transform: translate(-525px, 510px);
+    transform: translate(-525px, 510px);
+  }
+  60% {
+    -webkit-transform: translate(515px, 55px);
+    transform: translate(515px, 55px);
+  }
+  70% {
+    -webkit-transform: translate(50px, 515px);
+    transform: translate(50px, 515px);
+  }
+  80% {
+    -webkit-transform: translate(525px, 535px);
+    transform: translate(525px, 535px);
+  }
+  90% {
+    -webkit-transform: translate(-510px, 510px);
+    transform: translate(-510px, 510px);
   }
 }
