@@ -14,7 +14,7 @@
     left: -100%;
     background-repeat: repeat;
     background-image: url(./assets/images/noise.png);
-    opacity: .6;
+    opacity: 1;
     will-change: transform;
     z-index: 0;
     pointer-events: none;
@@ -236,5 +236,27 @@
     90% {
         -webkit-transform: translate(-510px, 510px);
         transform: translate(-510px, 510px)
+    }
+}
+
+
+
+@media only screen and (max-width: 1680px) {
+    .menu {
+      max-width: 250px;
+
+      .menuItem {
+          p {
+              line-height: 3;
+          }
+      }
+
+      .menuFooter {
+          .copyright {
+              p {
+                  font-size: 13px;
+              }
+          }
+      }
     }
 }

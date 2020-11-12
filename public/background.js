@@ -9234,8 +9234,8 @@
             }
             n.isRendered = l = !0;
             var s = document.getElementById("background"),
-                o = window.innerWidth,
-                c = window.innerHeight;
+                o = document.getElementsByClassName('cont')[0].offsetWidth,
+                c = document.getElementsByClassName('cont')[0].offsetHeight;
             s.width = o, s.height = c;
             var h = new u.default.Stage(s);
             h.autoClear = !0, u.default.Ticker.setFPS(30), u.default.Ticker.timingMode = u.default.Ticker.RAF_SYNCHED, u.default.Ticker.addEventListener("tick", t);
@@ -9341,7 +9341,7 @@
                 zIndex: 999
             }).on("transitionend", e), setTimeout(t, 1e3), setTimeout(function () {
                 r.isRendered || (0, r.renderBackground)()
-            }, 5e3)
+            }, 1e3)
         }
         Object.defineProperty(n, "__esModule", {
             value: !0
